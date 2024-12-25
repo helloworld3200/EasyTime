@@ -21,8 +21,8 @@ public class EasyTime implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello World from EasyTime_fabric by helloworld3200");
-
 		timeCommands.registerCommands();
+
+		LOGGER.info("Hello World! Load successful!");
 	}
 }

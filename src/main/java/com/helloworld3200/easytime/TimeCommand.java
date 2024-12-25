@@ -18,6 +18,7 @@ public class TimeCommand {
 		CommandManager cmdManager = source.getServer().getCommandManager();
 
 		cmdManager.executeWithPrefix(source, cmdTimeRedirect);
+		// don't broadcast back to source because the /time set <redirect> will do that already
 
 		return 1;
 	}
@@ -27,6 +28,8 @@ public class TimeCommand {
                 .requires(source -> source.hasPermissionLevel(CMD_PERM_LEVEL))
                 .executes(this::executeCommand)
         ));
+
+        EasyTime.LOGGER.info("Successfully registered command: {} with redirect as {}", cmdName, cmdTimeRedirect);
 	}
 
 	TimeCommand(String cmdName, String cmdTimeRedirect, boolean... registerImmediateOpt) {
