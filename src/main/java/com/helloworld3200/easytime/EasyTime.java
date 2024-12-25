@@ -13,12 +13,16 @@ public class EasyTime implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+	public final TimeCommands timeCommands = new TimeCommands();
+
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Hello World from EasyTime_fabric by helloworld3200");
+
+		timeCommands.registerCommands();
 	}
 }
